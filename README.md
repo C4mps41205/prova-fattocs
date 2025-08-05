@@ -144,20 +144,7 @@ fattocs/
 |---------|--------|-----------|------------|
 | **CRUD Tarefas** | ✅ | Criar, ler, atualizar, deletar | Go + PostgreSQL |
 | **Drag & Drop** | ✅ | Reordenação intuitiva | Vue.Draggable |
-| **Categorização** | ✅ | Organização por categorias | Go + Vue |
-| **Filtros** | ✅ | Busca e filtros avançados | Vue Composables |
-| **Responsividade** | ✅ | Design adaptativo | Tailwind CSS |
-| **Dark Mode** | ✅ | Tema escuro/claro | Vue + Tailwind |
-
-### 4.2 Performance Metrics
-
-| Métrica | Valor | Benchmark |
-|---------|-------|-----------|
-| **First Contentful Paint** | < 1.2s | Excelente |
-| **Largest Contentful Paint** | < 2.5s | Bom |
-| **API Response Time** | < 100ms | Ótimo |
-| **Bundle Size** | < 500KB | Pequeno |
-| **Lighthouse Score** | 95+ | Excelente |
+| **Responsividade** | ✅ | Design adaptativo | Tailwind CSS ||
 
 ## 5. Estratégias de Escalabilidade
 
@@ -170,28 +157,15 @@ fattocs/
 | **Database** | Read Replicas | PostgreSQL Streaming |
 | **Cache** | Redis Cluster | Sessões e queries |
 
-### 5.2 Otimizações Implementadas
-
-| Tipo | Técnica | Benefício |
-|------|---------|-----------|
-| **Frontend** | Code Splitting | Carregamento sob demanda |
-| **Frontend** | Virtual Scrolling | Performance com listas grandes |
-| **Backend** | Connection Pooling | Reutilização de conexões DB |
-| **Backend** | Middleware Caching | Redução de queries |
-| **Database** | Indexes Otimizados | Queries mais rápidas |
-
 ## 6. Segurança
 
 ### 6.1 Medidas Implementadas
 
 | Categoria | Implementação | Descrição |
 |-----------|---------------|-----------|
-| **Autenticação** | JWT Tokens | Sessões seguras |
-| **Autorização** | RBAC | Controle de acesso |
 | **Validação** | Input Sanitization | Prevenção de ataques |
 | **CORS** | Configuração restritiva | Controle de origem |
 | **HTTPS** | TLS 1.3 | Criptografia em trânsito |
-| **Rate Limiting** | Middleware customizado | Prevenção de abuso |
 
 ## 7. Testes
 
@@ -200,8 +174,6 @@ fattocs/
 | Tipo | Framework | Cobertura | Status |
 |------|-----------|-----------|--------|
 | **Unitários** | Go testing | 85%+ | ✅ |
-| **Integração** | Testcontainers | 70%+ | ✅ |
-| **E2E** | Playwright | 60%+ | ✅ |
 | **API** | Postman/Newman | 90%+ | ✅ |
 
 ## 8. Deploy e DevOps
@@ -217,25 +189,6 @@ graph LR
     E --> F[Testes E2E]
     F --> G[Deploy Produção]
 ```
-
-### 8.2 Ambientes
-
-| Ambiente | URL | Propósito | Auto Deploy |
-|----------|-----|-----------|-------------|
-| **Development** | localhost:3000 | Desenvolvimento local | - |
-| **Staging** | staging.fattocs.com | Testes pre-produção | ✅ |
-| **Production** | app.fattocs.com | Ambiente de produção | Manual |
-
-## 9. Monitoramento e Observabilidade
-
-### 9.1 Métricas Coletadas
-
-| Tipo | Ferramenta | Métricas |
-|------|------------|----------|
-| **Application** | Prometheus | Latência, throughput, erros |
-| **Infrastructure** | Grafana | CPU, memória, rede |
-| **Logs** | ELK Stack | Logs centralizados |
-| **APM** | Jaeger | Distributed tracing |
 
 ## 10. Roadmap Futuro
 
@@ -260,3 +213,4 @@ O sistema **Fattocs** representa uma solução moderna e robusta para gerenciame
 - **User Experience**: Interface intuitiva com drag & drop nativo
 
 A documentação abrangente e estrutura bem definida garantem que o projeto possa evoluir continuamente, mantendo sempre alta qualidade e performance.
+
