@@ -9,11 +9,11 @@ import {
   AlertTriangle,
   Trash2
 } from 'lucide-vue-next'
-import  Card  from '../../components/ui/Card.vue'
-import  CardContent  from '../../components/ui/CardContent.vue'
-import  Badge  from '../../components/ui/Badge.vue'
-import  Button  from '../../components/ui/Button.vue'
-import  Modal  from '../../components/ui/Modal.vue'
+import Card from '../../components/ui/Card.vue'
+import CardContent from '../../components/ui/CardContent.vue'
+import Badge from '../../components/ui/Badge.vue'
+import Button from '../../components/ui/Button.vue'
+import Modal from '../../components/ui/Modal.vue'
 import TaskForm from './TaskForm.vue'
 import type { Task } from '../../types/task.ts'
 import { useTasks } from '../../composables/useTasks.ts'
@@ -40,12 +40,23 @@ const formatCurrency = (value: number) =>
       currency: 'USD'
     }).format(value)
 
-const formatDate = (dateString: string) =>
-    new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    })
+const formatDate = (dateString: string) => {
+  if (!dateString) return ''
+
+  const date = new Date(dateString)
+  const year = date.getUTCFullYear()
+  const month = date.getUTCMonth()
+  const day = date.getUTCDate()
+
+  const utcDate = new Date(Date.UTC(year, month, day))
+
+  return utcDate.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    timeZone: 'UTC'
+  })
+}
 
 const isExpensive = (cost: number) => cost >= 1000
 
@@ -75,7 +86,6 @@ const handleDelete = async () => {
 }
 </script>
 
-
 <template>
   <div>
     <Card
@@ -85,7 +95,7 @@ const handleDelete = async () => {
           ? 'bg-yellow-50 border-yellow-200 border-l-4 border-l-yellow-400'
           : 'bg-white border-gray-200',
         isDragging ? 'shadow-lg' : ''
-      ]"
+      ].join(' ')"
     >
       <CardContent class="p-3 sm:p-4 lg:p-6">
         <div class="flex items-start justify-between">

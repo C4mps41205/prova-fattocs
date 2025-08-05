@@ -7,7 +7,7 @@
     </label>
 
     <slot>
-      <Input v-bind="inputProps" :error="error" />
+      <Input v-bind="inputProps" :error="!!error" />
     </slot>
 
     <div v-if="error" class="flex items-center space-x-1 text-sm text-red-600">
