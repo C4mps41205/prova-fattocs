@@ -176,20 +176,6 @@ fattocs/
 | **Unitários** | Go testing | 85%+ | ✅ |
 | **API** | Postman/Newman | 90%+ | ✅ |
 
-## 8. Deploy e DevOps
-
-### 8.1 Pipeline de Deploy
-
-```mermaid
-graph LR
-    A[Git Push] --> B[GitHub Actions]
-    B --> C[Testes]
-    C --> D[Build Docker]
-    D --> E[Deploy Staging]
-    E --> F[Testes E2E]
-    F --> G[Deploy Produção]
-```
-
 ## 10. Roadmap Futuro
 
 ### 10.1 Próximas Features
@@ -213,4 +199,5 @@ O sistema **Fattocs** representa uma solução moderna e robusta para gerenciame
 - **User Experience**: Interface intuitiva com drag & drop nativo
 
 A documentação abrangente e estrutura bem definida garantem que o projeto possa evoluir continuamente, mantendo sempre alta qualidade e performance.
+
 
